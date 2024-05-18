@@ -1,13 +1,11 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
 
-interface ButtonProps {
-    label:string
-}
+type ButtonProps = ComponentProps<"button">;
 
-const Button:React.FC<ButtonProps> = ({label}) => {
+const Button:React.FC<ButtonProps> = ({...props}:ButtonProps) => {
 
     return(
-        <button>{label}</button>
+        <button className='text-blue-500' {...props}/>
     )
 }
 
